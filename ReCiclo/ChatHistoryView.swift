@@ -34,6 +34,7 @@ struct ChatHistoryView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: newChat) {
                         Image(systemName: "plus")
+                            .foregroundColor(.greenTertiary)
                     }
                 }
             }
@@ -68,7 +69,7 @@ struct ChatRow: View {
     var body: some View {
         HStack {
             Circle()
-                .fill(Color.blue)
+                .fill(Color.bluePrimary)
                 .frame(width: 50, height: 50)
                 .overlay(
                     Text(chat.name.prefix(1))

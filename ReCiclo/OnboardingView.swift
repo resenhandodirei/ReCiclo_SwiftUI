@@ -54,13 +54,13 @@ struct OnboardingView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color("PrimaryGreen"))
+                    .background(Color("greenTertiary"))
                     .cornerRadius(10)
                     .padding(.horizontal)
             }
             .padding(.top, 20)
         }
-        .background(Color("LightBeige"))
+        .background(Color("bluePrimary"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -78,17 +78,17 @@ struct OnboardingPageView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
-                .foregroundColor(Color("PrimaryGreen")) // Ícone principal
+                .foregroundColor(Color("greenSecondary")) // Ícone principal
             
             Text(title)
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color("PrimaryGreen"))
+                .foregroundColor(Color("greenSecondary"))
                 .padding(.top, 20)
             
             Text(description)
                 .font(.body)
-                .foregroundColor(Color("SecondaryGray"))
+                .foregroundColor(Color("white"))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
                 .padding(.top, 10)

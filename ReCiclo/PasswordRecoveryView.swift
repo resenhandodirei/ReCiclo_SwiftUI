@@ -21,23 +21,23 @@ struct PasswordRecoveryView: View {
             Text("Recuperar Senha")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color("PrimaryGreen"))
+                .foregroundColor(Color("greenTertiary"))
 
             // Descrição
             Text("Digite o endereço de email associado à sua conta. Enviaremos um link para redefinir sua senha.")
                 .font(.body)
-                .foregroundColor(Color("SecondaryGray"))
+                .foregroundColor(Color("bluePrimary"))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
 
             // Campo de Email
             TextField("Email", text: $email)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenTertiary"), lineWidth: 1)
                 )
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
@@ -55,7 +55,7 @@ struct PasswordRecoveryView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color("PrimaryGreen"))
+            .background(Color("greenTertiary"))
             .cornerRadius(10)
 
             Spacer()
@@ -63,17 +63,23 @@ struct PasswordRecoveryView: View {
             // Link para voltar ao login
             HStack {
                 Text("Lembrou sua senha?")
-                    .foregroundColor(Color("SecondaryGray"))
+                    .foregroundColor(Color("greenSecondary"))
 
                 Button(action: navigateToLogin) {
                     Text("Faça login")
-                        .foregroundColor(Color("PrimaryGreen"))
+                        .foregroundColor(Color("greenSecondary"))
                         .fontWeight(.bold)
                 }
             }
         }
         .padding()
-        .background(Color("LightBeige"))
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color("greenSecondary"), Color("greenTertiary")]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            )
         .edgesIgnoringSafeArea(.all)
         .alert(isPresented: $showAlert) {
             Alert(

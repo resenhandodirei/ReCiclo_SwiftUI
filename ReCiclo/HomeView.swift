@@ -33,13 +33,13 @@ struct HomeeView: View {
                 HStack {
                     TextField("Buscar produtos...", text: $searchQuery)
                         .padding(10)
-                        .background(Color("LightBeige"))
+                        .background(Color("greenSecondary").opacity(0.60))
                         .cornerRadius(10)
                         .overlay(
                             HStack {
                                 Spacer()
                                 Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.greenSecondary)
                                     .padding(.trailing, 10)
                             }
                         )
@@ -63,12 +63,19 @@ struct HomeeView: View {
                         }) {
                             Image(systemName: "person.crop.circle")
                                 .font(.title2)
-                                .foregroundColor(Color("PrimaryGreen"))
+                                .foregroundColor(Color("greenSecondary").opacity(0.60))
                         }
                     }
                 }
             }
-            .background(Color("LightBeige").edgesIgnoringSafeArea(.all))
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("bluePrimary"), Color("greenSecondary")]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .edgesIgnoringSafeArea(.all)
+            )
         }
     }
 
@@ -100,7 +107,7 @@ struct ProductCardView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(product.name)
                     .font(.headline)
-                    .foregroundColor(Color("PrimaryGreen"))
+                    .foregroundColor(Color("bluePrimary"))
                     .lineLimit(1)
 
                 Text("R$ \(product.price, specifier: "%.2f")")
@@ -117,7 +124,7 @@ struct ProductCardView: View {
                     print("\(product.name) foi favoritado/desfavoritado.")
                 }) {
                     Image(systemName: product.isFavorite ? "heart.fill" : "heart")
-                        .foregroundColor(product.isFavorite ? .red : .gray)
+                        .foregroundColor(product.isFavorite ? .greenSecondary : .gray)
                 }
             }
             .padding(.horizontal, 8)

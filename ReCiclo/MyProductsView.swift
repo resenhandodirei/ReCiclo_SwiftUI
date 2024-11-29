@@ -18,25 +18,38 @@ struct MyProductsView: View {
         ProductItem(id: 4, name: "Livro de Ficção", price: 20.0, image: "book")
     ]
     
+    init() {
+        // Custom Tab Bar Appearance
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemBackground
+        
+        // Change selected and unselected item colors
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor(named: "greenSecondary")
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor(named: "greenSecondary") ?? .green]
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor.gray
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.gray]
+        
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         NavigationView {
-            VStack {
-                // Tabs for "Ativos" and "Vendidos"
-                TabView {
-                    // Ativos
-                    ProductsListView(products: activeProducts, title: "Ativos")
-                        .tabItem {
-                            Label("Ativos", systemImage: "cart.fill")
-                        }
-                    
-                    // Vendidos
-                    ProductsListView(products: soldProducts, title: "Vendidos")
-                        .tabItem {
-                            Label("Vendidos", systemImage: "checkmark.circle.fill")
-                        }
-                }
-                .navigationTitle("Meus Produtos")
+            TabView {
+                // Ativos
+                ProductsListView(products: activeProducts, title: "Ativos")
+                    .tabItem {
+                        Label("Ativos", systemImage: "cart.fill")
+                    }
+                
+                // Vendidos
+                ProductsListView(products: soldProducts, title: "Vendidos")
+                    .tabItem {
+                        Label("Vendidos", systemImage: "checkmark.circle.fill")
+                    }
             }
+            .navigationTitle("Meus Produtos")
         }
     }
 }
@@ -60,19 +73,19 @@ struct ProductsListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 60, height: 60)
-                            .background(Color.gray.opacity(0.2))
+                            .background(Color.greenSecondary.opacity(0.5))
                             .cornerRadius(8)
                         
                         VStack(alignment: .leading, spacing: 5) {
                             // Product Name
                             Text(product.name)
                                 .font(.headline)
-                                .foregroundColor(.primary)
+                                .foregroundColor(.bluePrimary)
                             
                             // Product Price
                             Text("R$ \(product.price, specifier: "%.2f")")
                                 .font(.subheadline)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.greenTertiary)
                         }
                         
                         Spacer()
@@ -83,7 +96,7 @@ struct ProductsListView: View {
                             print("Edit \(product.name)")
                         }) {
                             Image(systemName: "pencil")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.greenSecondary)
                         }
                         .padding(.trailing, 8)
                         
@@ -92,7 +105,7 @@ struct ProductsListView: View {
                             print("Delete \(product.name)")
                         }) {
                             Image(systemName: "trash")
-                                .foregroundColor(.red)
+                                .foregroundColor(.bluePrimary)
                         }
                     }
                     .padding(.vertical, 5)

@@ -41,10 +41,10 @@ struct PublishProductView: View {
                                 VStack {
                                     Image(systemName: "plus")
                                         .font(.largeTitle)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.greenSecondary)
                                     Text("Adicionar")
                                         .font(.caption)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.greenSecondary)
                                 }
                                 .frame(width: 100, height: 100)
                                 .background(Color.gray.opacity(0.2))
@@ -90,7 +90,7 @@ struct PublishProductView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.green)
+                        .background(Color.greenTertiary)
                         .cornerRadius(10)
                     }
                 }

@@ -25,7 +25,7 @@ struct CartView: View {
                 if cartItems.isEmpty {
                     Text("Seu carrinho está vazio.")
                         .font(.headline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.greenTertiary)
                         .padding()
                 } else {
                     List {
@@ -36,19 +36,19 @@ struct CartView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 60, height: 60)
-                                    .background(Color.gray.opacity(0.2))
+                                    .background(Color.greenTertiary.opacity(0.2))
                                     .cornerRadius(8)
                                 
                                 VStack(alignment: .leading) {
                                     // Product Name
                                     Text(item.name)
                                         .font(.headline)
-                                        .foregroundColor(.primary)
+                                        .foregroundColor(.greenTertiary)
                                     
                                     // Product Price
                                     Text("R$ \(item.price, specifier: "%.2f")")
                                         .font(.subheadline)
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(.greenSecondary)
                                 }
                                 Spacer()
                                 
@@ -71,7 +71,7 @@ struct CartView: View {
                                         item.quantity += 1
                                     }) {
                                         Image(systemName: "plus.circle.fill")
-                                            .foregroundColor(.green)
+                                            .foregroundColor(.blue)
                                     }
                                 }
                             }
@@ -89,7 +89,7 @@ struct CartView: View {
                             Text("R$ \(totalPrice, specifier: "%.2f")")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(.green)
+                                .foregroundColor(.greenSecondary)
                         }
                         .padding()
                         
@@ -102,7 +102,7 @@ struct CartView: View {
                                 .foregroundColor(.white)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color.blue)
+                                .background(Color.greenTertiary)
                                 .cornerRadius(10)
                         }
                         .padding()

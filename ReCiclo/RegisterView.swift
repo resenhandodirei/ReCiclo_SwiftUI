@@ -23,26 +23,26 @@ struct RegisterView: View {
             Text("Criar Conta")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color("PrimaryGreen"))
+                .foregroundColor(Color("bluePrimary"))
 
             // Campo de Nome
             TextField("Nome Completo", text: $name)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenSecondary"), lineWidth: 1)
                 )
 
             // Campo de Email
             TextField("Email", text: $email)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenSecondary"), lineWidth: 1)
                 )
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
@@ -58,35 +58,35 @@ struct RegisterView: View {
                     isShowingPassword.toggle()
                 }) {
                     Image(systemName: isShowingPassword ? "eye.slash" : "eye")
-                        .foregroundColor(Color("SecondaryGray"))
+                        .foregroundColor(Color("greenTertiary"))
                 }
             }
             .padding()
-            .background(Color("LightBeige"))
+            .background(Color("greenSecondary"))
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                    .stroke(Color("greenSecondary"), lineWidth: 1)
             )
 
             // Campo de Confirmação de Senha
             SecureField("Confirmar Senha", text: $confirmPassword)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenSecondary"), lineWidth: 1)
                 )
 
             // Campo de Localização
             TextField("Localização (Cidade/Estado)", text: $location)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenSecondary"), lineWidth: 1)
                 )
 
             // Botão de Cadastro
@@ -102,7 +102,7 @@ struct RegisterView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color("PrimaryGreen"))
+            .background(Color("bluePrimary"))
             .cornerRadius(10)
 
             Spacer()
@@ -110,18 +110,23 @@ struct RegisterView: View {
             // Texto de redirecionamento para login
             HStack {
                 Text("Já tem uma conta?")
-                    .foregroundColor(Color("SecondaryGray"))
+                    .foregroundColor(Color("greenSecondary"))
 
                 Button(action: navigateToLogin) {
                     Text("Faça login")
-                        .foregroundColor(Color("PrimaryGreen"))
+                        .foregroundColor(Color("greenSecondary"))
                         .fontWeight(.bold)
                 }
             }
         }
         .padding()
-        .background(Color("LightBeige"))
-        .edgesIgnoringSafeArea(.all)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color("greenSecondary"), Color("greenTertiary")]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .edgesIgnoringSafeArea(.all))
     }
 
     // Funções de ação

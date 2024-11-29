@@ -23,12 +23,13 @@ struct CheckoutView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Endereço de Envio")
                         .font(.headline)
+                        .foregroundColor(.greenTertiary)
                     
                     Text(address)
                         .font(.body)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.greenTertiary.opacity(0.2))
                         .cornerRadius(8)
                     
                     Button(action: {
@@ -37,7 +38,7 @@ struct CheckoutView: View {
                     }) {
                         Text("Editar Endereço")
                             .font(.subheadline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.bluePrimary)
                     }
                 }
                 .padding(.horizontal)
@@ -72,7 +73,7 @@ struct CheckoutView: View {
                         Text("R$ \(totalAmount, specifier: "%.2f")")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(.green)
+                            .foregroundColor(.greenTertiary)
                     }
                 }
                 .padding(.horizontal)
@@ -88,7 +89,7 @@ struct CheckoutView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                        .background(Color.bluePrimary)
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)

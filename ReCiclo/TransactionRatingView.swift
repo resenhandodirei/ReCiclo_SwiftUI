@@ -29,7 +29,7 @@ struct TransactionRatingView: View {
                         Image(systemName: star <= rating ? "star.fill" : "star")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(star <= rating ? .yellow : .gray)
+                            .foregroundColor(star <= rating ? .greenSecondary : .bluePrimary)
                             .onTapGesture {
                                 rating = star
                             }
@@ -47,7 +47,7 @@ struct TransactionRatingView: View {
                         .padding(8)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                .stroke(Color.greenTertiary.opacity(0.5), lineWidth: 1)
                         )
                 }
                 .padding(.horizontal)
@@ -59,7 +59,7 @@ struct TransactionRatingView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(rating > 0 ? Color.blue : Color.gray)
+                        .background(rating > 0 ? Color.greenTertiary : Color.bluePrimary)
                         .cornerRadius(10)
                 }
                 .disabled(rating == 0)

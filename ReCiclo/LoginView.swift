@@ -22,23 +22,23 @@ struct LoginView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .foregroundColor(Color("PrimaryGreen"))
+                .foregroundColor(Color("bluePrimary"))
                 .padding(.bottom, 20)
 
             // Título
             Text("Bem-vindo ao ReCiclo")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color("PrimaryGreen"))
+                .foregroundColor(Color("bluePrimary"))
 
             // Campo de Email
             TextField("Email", text: $email)
                 .padding()
-                .background(Color("LightBeige"))
+                .background(Color("greenSecondary"))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                        .stroke(Color("greenTertiary"), lineWidth: 1)
                 )
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
@@ -55,15 +55,15 @@ struct LoginView: View {
                     isShowingPassword.toggle()
                 }) {
                     Image(systemName: isShowingPassword ? "eye.slash" : "eye")
-                        .foregroundColor(Color("SecondaryGray"))
+                        .foregroundColor(Color("greenTertiary"))
                 }
             }
             .padding()
-            .background(Color("LightBeige"))
+            .background(Color("greenSecondary"))
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("PrimaryGreen"), lineWidth: 1)
+                    .stroke(Color("greenTertiary"), lineWidth: 1)
             )
 
             // Botão de Login
@@ -79,25 +79,25 @@ struct LoginView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color("PrimaryGreen"))
+            .background(Color("bluePrimary"))
             .cornerRadius(10)
 
             // Texto de Esqueci minha senha
             Button(action: resetPassword) {
                 Text("Esqueci minha senha")
                     .font(.subheadline)
-                    .foregroundColor(Color("PrimaryGreen"))
+                    .foregroundColor(Color("greenSecondary"))
             }
 
             Divider().padding(.vertical)
 
             // Botões de Redes Sociais
             HStack(spacing: 20) {
-                SocialLoginButton(iconName: "logo.facebook", text: "Facebook", backgroundColor: Color.blue) {
+                SocialLoginButton(iconName: "logo.facebook", text: "Facebook", backgroundColor: Color.bluePrimary.opacity(0.95)) {
                     authenticateWithFacebook()
                 }
 
-                SocialLoginButton(iconName: "logo.google", text: "Google", backgroundColor: Color.red) {
+                SocialLoginButton(iconName: "logo.google", text: "Google", backgroundColor: Color.greenTertiary) {
                     authenticateWithGoogle()
                 }
             }
@@ -117,8 +117,14 @@ struct LoginView: View {
             }
         }
         .padding()
-        .background(Color("LightBeige"))
-        .edgesIgnoringSafeArea(.all)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color("greenSecondary"), Color("greenTertiary")]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .edgesIgnoringSafeArea(.all)
+     )
     }
 
     // Funções de ações (exemplo)

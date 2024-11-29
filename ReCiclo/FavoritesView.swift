@@ -21,7 +21,7 @@ struct FavoritesView: View {
                     // Mensagem para lista vazia
                     Text("Sua lista de favoritos está vazia.")
                         .font(.headline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.bluePrimary)
                         .multilineTextAlignment(.center)
                         .padding()
                 } else {
@@ -33,14 +33,14 @@ struct FavoritesView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 50, height: 50)
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.greenTertiary)
                                 
                                 VStack(alignment: .leading, spacing: 5) {
                                     Text(item.name)
                                         .font(.headline)
                                     Text(String(format: "R$ %.2f", item.price))
                                         .font(.subheadline)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.greenSecondary)
                                 }
                                 Spacer()
                                 
@@ -49,7 +49,7 @@ struct FavoritesView: View {
                                     removeFromFavorites(item: item)
                                 }) {
                                     Image(systemName: "heart.slash.fill")
-                                        .foregroundColor(.red)
+                                        .foregroundColor(.greenTertiary)
                                 }
                             }
                             .padding(.vertical, 8)
@@ -62,7 +62,7 @@ struct FavoritesView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: clearFavorites) {
                         Text("Limpar Tudo")
-                            .foregroundColor(.red)
+                            .foregroundColor(.greenTertiary)
                     }
                     .disabled(favoriteItems.isEmpty)
                 }

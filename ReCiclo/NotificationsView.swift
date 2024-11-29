@@ -30,7 +30,7 @@ struct NotificationsView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: clearNotifications) {
                         Text("Limpar Tudo")
-                            .foregroundColor(.red)
+                            .foregroundColor(.greenSecondary)
                     }
                 }
             }
@@ -73,14 +73,14 @@ struct NotificationRow: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(notification.title)
                     .font(.headline)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.bluePrimary)
                 Text(notification.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(2)
                 Text(notification.time)
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.greenTertiary)
             }
         }
         .padding(.vertical, 8)
@@ -93,7 +93,7 @@ struct IconView: View {
     
     var body: some View {
         Circle()
-            .fill(colorForType(type))
+            .fill(Color("greenTertiary")) // Define a cor como greenTertiary
             .frame(width: 40, height: 40)
             .overlay(
                 Image(systemName: iconForType(type))
@@ -109,15 +109,6 @@ struct IconView: View {
         case .transaction: return "checkmark.circle.fill"
         }
     }
-    
-    private func colorForType(_ type: NotificationType) -> Color {
-        switch type {
-        case .message: return .blue
-        case .priceChange: return .orange
-        case .promotion: return .yellow
-        case .transaction: return .green
-        }
-    }
 }
 
 // Preview
@@ -126,3 +117,4 @@ struct NotificationsView_Previews: PreviewProvider {
         NotificationsView()
     }
 }
+

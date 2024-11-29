@@ -53,9 +53,9 @@ struct ChatView: View {
                 
                 Button(action: sendMessage) {
                     Image(systemName: "paperplane.fill")
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
                         .padding(10)
-                        .background(Color.blue.opacity(0.2))
+                        .background(Color.bluePrimary)
                         .clipShape(Circle())
                 }
                 .disabled(newMessage.isEmpty)
@@ -114,7 +114,7 @@ struct ChatBubble: View {
         Text(text)
             .padding()
             .foregroundColor(isSender ? .white : .black)
-            .background(isSender ? Color.blue : Color(UIColor.systemGray4))
+            .background(isSender ? Color.bluePrimary : Color(UIColor.systemGray4))
             .cornerRadius(15)
             .frame(maxWidth: 250, alignment: isSender ? .trailing : .leading)
     }

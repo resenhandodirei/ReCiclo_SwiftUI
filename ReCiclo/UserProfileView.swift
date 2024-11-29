@@ -38,28 +38,28 @@ struct UserProfileView: View {
                         Text("\(String(format: "%.1f", userRating))")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.greenTertiary)
                         Text("Avaliação")
                             .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.bluePrimary)
                     }
                     VStack {
                         Text("\(itemsSold)")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.green)
+                            .foregroundColor(.greenTertiary)
                         Text("Vendidos")
                             .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.bluePrimary)
                     }
                     VStack {
                         Text("\(itemsBought)")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.greenTertiary)
                         Text("Comprados")
                             .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.bluePrimary)
                     }
                 }
                 
@@ -102,7 +102,7 @@ struct ProfileActionButton: View {
                 .foregroundColor(.white)
                 .frame(width: 20, height: 20)
                 .padding(8)
-                .background(Circle().fill(Color.blue))
+                .background(Circle().fill(Color.greenSecondary))
             
             Text(title)
                 .font(.body)
@@ -111,7 +111,7 @@ struct ProfileActionButton: View {
             Spacer()
             
             Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
+                .foregroundColor(.greenTertiary)
         }
         .padding()
         .background(Color(.systemGray6))

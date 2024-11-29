@@ -24,7 +24,7 @@ struct PurchaseConfirmationView: View {
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .frame(width: 80, height: 80)
-                    .foregroundColor(.green)
+                    .foregroundColor(.greenTertiary)
                 Text("Compra Confirmada!")
                     .font(.title)
                     .fontWeight(.bold)
@@ -44,7 +44,7 @@ struct PurchaseConfirmationView: View {
                                 .fontWeight(.semibold)
                             Text("Quantidade: \(item.1)")
                                 .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.greenTertiary)
                         }
                         Spacer()
                         Text("R$ \(item.2, specifier: "%.2f")")
@@ -61,7 +61,7 @@ struct PurchaseConfirmationView: View {
                     Spacer()
                     Text("R$ \(totalPaid, specifier: "%.2f")")
                         .font(.title3)
-                        .foregroundColor(.green)
+                        .foregroundColor(.greenSecondary)
                         .fontWeight(.bold)
                 }
             }
@@ -77,7 +77,7 @@ struct PurchaseConfirmationView: View {
                     .font(.body)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color.greenTertiary.opacity(0.2))
                     .cornerRadius(8)
                 
                 Text("Previsão de Entrega: \(estimatedDeliveryDate)")
@@ -98,7 +98,7 @@ struct PurchaseConfirmationView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
+                    .background(Color.bluePrimary)
                     .cornerRadius(10)
             }
             .padding(.horizontal)
