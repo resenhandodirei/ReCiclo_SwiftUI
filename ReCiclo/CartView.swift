@@ -109,7 +109,7 @@ struct CartView: View {
                     }
                 }
             }
-            .navigationTitle("Carrinho")
+            .navigationBarTitle("Carinho", displayMode: .inline)
         }
     }
     

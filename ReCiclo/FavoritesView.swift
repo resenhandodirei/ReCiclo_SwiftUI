@@ -57,7 +57,7 @@ struct FavoritesView: View {
                     }
                 }
             }
-            .navigationTitle("Favoritos")
+            .navigationBarTitle("Favoritos", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: clearFavorites) {

@@ -94,7 +94,7 @@ struct CheckoutView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Checkout")
+            .navigationBarTitle("Checkout", displayMode: .inline)
             .alert(isPresented: $isOrderConfirmed) {
                 Alert(
                     title: Text("Pedido Confirmado"),

@@ -49,7 +49,7 @@ struct MyProductsView: View {
                         Label("Vendidos", systemImage: "checkmark.circle.fill")
                     }
             }
-            .navigationTitle("Meus Produtos")
+            .navigationBarTitle("Meus produtos", displayMode: .inline)
         }
     }
 }
